@@ -60,10 +60,11 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  var yearBorn = addBirthYearProperty.yearBorn;
-  addBirthYearProperty.push(yearBorn);
-};
-
+  let yearBorn = year;
+  obj.value = [obj, yearBorn];
+  };
+  console.log(addBirthYearProperty);
+//So you don’t need to use push. You can use dot notation to add yearBorn to the object. And then you want the value of that to be the year.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
