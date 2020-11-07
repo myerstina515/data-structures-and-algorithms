@@ -69,10 +69,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  const regex = /(\S+[A-J]+\w+)/g;
-  var newCities = arr.match(regex);
-  return newCities;
-
+  var newArray = [];
+  const regex = /^[A-J]\w+/g;
+  arr.forEach( elements => {
+  var newCities = elements.match(regex);
+  if (newCities !== null){
+    newArray.push(newCities[0]);
+  }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
