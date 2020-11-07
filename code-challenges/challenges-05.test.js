@@ -131,7 +131,8 @@ const listFoods = (recipe) => {
   let result = [];
   var items = recipe.ingredients;
   for (var i = 0; i < items.length; i++){
-    var total = items[i].slice(items.length-1);
+    var spaces = items[i].indexOf(' ', 5);
+    var total = items[i].slice(spaces+1);
     result.push(total);
   }
   return result;
