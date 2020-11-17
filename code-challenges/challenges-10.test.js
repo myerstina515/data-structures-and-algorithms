@@ -39,16 +39,16 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 const count = (target, input) => {
 
   return input.reduce( (accumulator, value) => {
-    value.reduce( (accumulatorTwo, value) => {
-      if ( value === target ) { 
-        var two = accumulatorTwo ++;
+    const rowCount = value.reduce( (innerAccumulator, innerValue) => {
+      if ( innerValue === target ) { 
+        return innerAccumulator + 1;
         // console.log('first log', typeof accumulatorTwo, typeof value)
-        return two;
       }
+      return innerAccumulator;
     }, 0);
     // console.log(typeof accumulator);
     // accumulator += value;
-    return accumulator;
+    return accumulator + rowCount;
   }, 0);
   // return number
 };
@@ -64,7 +64,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  var totalOne = input.map( n =>)
 };
 
 /* ------------------------------------------------------------------------------------------------
