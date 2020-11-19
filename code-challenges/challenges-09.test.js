@@ -160,13 +160,14 @@ const currentEvents = {
 }
 
 function getCurrentEvents(request, response){
-  response.send(mapCurrentEvents);
+  response.json(mapCurrentEvents);
 }
 
 const mapCurrentEvents = () => {
-  currentEvents.map(obj => {
+  let hello = currentEvents.news.map(obj => {
     return new Event(obj);
   })
+  return hello;
 }
 
 function Event(obj){
