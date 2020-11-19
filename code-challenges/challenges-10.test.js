@@ -42,15 +42,11 @@ const count = (target, input) => {
     const rowCount = value.reduce( (innerAccumulator, innerValue) => {
       if ( innerValue === target ) { 
         return innerAccumulator + 1;
-        // console.log('first log', typeof accumulatorTwo, typeof value)
       }
       return innerAccumulator;
     }, 0);
-    // console.log(typeof accumulator);
-    // accumulator += value;
     return accumulator + rowCount;
   }, 0);
-  // return number
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +60,15 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  var totalOne = input.map( n =>)
+  var zero = {};
+  var totalOne = input.reduce((r, e) => {
+    e.forEach((n, j) => {
+      if (n==0) zero[j] = true;
+      if (!zero[j]) r += n;
+    })
+    return r;
+  }, 0)
+  return totalOne;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +84,24 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(firstNest => {
+    return firstNest.reduce( (acc, secondNest) => {
+      if (typeof secondNest === "number" && !(secondNest % 5)){
+        acc.push(Math.pow(2, secondNest));
+      }
+      return acc;
+    }, [])
+  })
+  // let arrays = input.filter( numbers => {
+  //   let innerArray = numbers.filter( num => {
+  //     return (num % 5) & (num != NaN);
+  //   })
+  //   let raisedToTwo = innerArray.map( n => {
+  //     Math.pow(2, n);
+  //   })
+  //   return raisedToTwo;
+  // })
+  // return arrays;
 };
 
 /* ------------------------------------------------------------------------------------------------
