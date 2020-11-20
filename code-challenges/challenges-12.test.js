@@ -9,13 +9,15 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  var maximum = arr.reduce( (a, b) => {
-    if (a < b) {
-      return false
+  var maximum = arr.reduce( (accumulator, n) => {
+    // If the accumulator is larger than or equal to n, I want to return it, if not, I want to keep n.
+    if (accumulator >= n) {
+      return accumulator;
     } else {
-      return true;
+      return n;
     }
-  })
+  }, 0)
+  return maximum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,12 +43,17 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  let total = stores.forEach( (value, idx) => {
-    let innerTotal = total.forEach(a, b)
-    
-  })
+  let hourlyTotals = [];
+  for (let i = 0; i < stores[0].length; i++){ hourlyTotals.push(0)};
+  stores.map( totals => {
+    totals.map( (innerTotals, idx) => {
+      hourlyTotals[idx] += innerTotals;
+    })
+  });
+  return hourlyTotals;
+}
 
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -59,7 +66,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let newArray = [];
+  hours.reduce( (acc, value, idx) => {
+    newArray.push({sales: `${data[idx]} cookies`, time: `${hours[idx]}`})
+  }, []);
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +95,15 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let counter = 0;
+  arr.map( element => {
+    element.items.map( object => {
+      if (object.name === 'Treats'){
+        counter += object.quantity;
+      }
+    })
+  })
+  return counter;
 };
 
 /* ------------------------------------------------------------------------------------------------
