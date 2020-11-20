@@ -34,7 +34,6 @@ const createServer = () => {
   });
   return server;
 };
-
 const currentEvents = {
   news: [
     {
