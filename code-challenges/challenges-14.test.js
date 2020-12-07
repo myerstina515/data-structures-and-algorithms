@@ -118,8 +118,10 @@ let starWarsData = [{
 let biggerThanLuke = (arr) => {
   let characters = '';
   arr.forEach( data => {
+    // console.log(data.mass);
     if (data.mass > 77){
-      characters += name;
+      // console.log(data.name)
+      characters += `${data.name} - `;
     }
     
   })
