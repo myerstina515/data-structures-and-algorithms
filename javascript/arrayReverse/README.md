@@ -11,8 +11,8 @@ The output is the same array, but with the items reversed.
 
 ## Approach & Efficiency
 
-
+We used 
 
 ## Solution
 
-('../assets/array-reverse.png')
+[whiteboard image](../assets/array-reverse.png)
