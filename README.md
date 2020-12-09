@@ -4,6 +4,8 @@
 
 1. [Array Reverse](javascript/arrayReverse/array-reverse.js)
 
+2. [Array Shift](javascript/arrayShift/array-shift.js)
+
 ## Create a copy of this repository
 
 1. Create a new repository in your GitHub account called `data-structures-and-algorithms`
