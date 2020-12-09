@@ -6,6 +6,10 @@
 
 2. [Array Shift](javascript/arrayShift/array-shift.js)
 
+3. [Array Binary Search](javascript/arrayBinarySearch/array-binary-search.js)
+
+
+
 ## Create a copy of this repository
 
 1. Create a new repository in your GitHub account called `data-structures-and-algorithms`
