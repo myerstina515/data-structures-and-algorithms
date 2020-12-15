@@ -24,3 +24,4 @@ toString: returns all of the node values of the linked list in string form, incl
 ### Sources:
 
 - Mariko Alvarado, Simon Panek, Tahmina Ringer
+- Day 2: Stacy Burris, Sara Strasner
