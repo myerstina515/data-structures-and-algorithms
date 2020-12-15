@@ -8,8 +8,6 @@ Tina Meyers
 
 javascript, jest
 
-## Solution:
-
 ### Sources:
 
 - Mariko Alvarado, Simon Panek, Tahmina Ringer

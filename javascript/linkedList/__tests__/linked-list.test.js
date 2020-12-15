@@ -54,7 +54,7 @@ describe('Return true', () => {
 });
 
 describe('Return false', () => {
-  it ('should return true when the value exists in the list', () => {
+  it ('should return false when the value does not exist in the list', () => {
     const list = new LL();
     list.insert('bananas');
     list.insert('apples');

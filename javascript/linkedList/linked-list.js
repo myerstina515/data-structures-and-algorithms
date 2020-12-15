@@ -46,7 +46,7 @@ class LinkedList {
   //     let result;
   //     while(currentNode.value !== searchValue){
   //       currentNode = currentNode.next;
-  //       if(currentNode.next === null){
+  //       if(currentNode === null){
   //         return result = false;
   //       }
   //     }
