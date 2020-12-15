@@ -8,7 +8,9 @@
 
 3. [Array Binary Search](javascript/arrayBinarySearch/array-binary-search.js)
 
+4. Not listed -- interview prep #1
 
+5. [Linked List](javascript/linkedList/linked-list.js)
 
 ## Create a copy of this repository
 
