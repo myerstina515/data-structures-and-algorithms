@@ -11,3 +11,7 @@ javascript, jest
 ### Sources:
 
 - Mariko Alvarado, Simon Panek, Tahmina Ringer
+
+### Whiteboard (linked List insertions):
+
+[whiteboard](../assets/LL-insertions.png)
