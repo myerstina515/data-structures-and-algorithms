@@ -12,6 +12,8 @@
 
 5. [Linked List](javascript/linkedList/linked-list.js)
 
+6. [Linked List Pt 2](javascript/linkedList/linked-list-js)
+
 ## Create a copy of this repository
 
 1. Create a new repository in your GitHub account called `data-structures-and-algorithms`
