@@ -129,4 +129,42 @@ describe('insert after end', () => {
     expect(list.toString()).toEqual('{two} -> {one} -> {five} -> NULL');
   });
 });
-
+// describe('happy path', () => {
+//   it('should have k in the middle of the linked list', () => {
+//     const list = new LL();
+//     list.insert('one');
+//     list.insert('two');
+//     list.insert('three');
+//     list.insert('four');
+//     list.kthFromEnd(1);
+//     expect(list.toString()).toEqual('two');
+//   });
+// });
+describe('k > length', () => {
+  it('should have k as larger than the length of the list', () => {
+    const list = new LL();
+    list.insert('three');
+    list.insert('two');
+    list.insert('one');
+    list.kthFromEnd(4);
+    expect(list.value).toEqual(undefined);
+  });
+});
+describe('k = length', () => {
+  it('should have k as equal to the length of the list', () => {
+    const list = new LL();
+    list.insert(3);
+    list.insert(2);
+    list.insert(1);
+    list.kthFromEnd(2);
+    expect(list.value).toEqual(undefined);
+  });
+});
+// describe('list one node long', () => {
+//   it('should have a LL length of one', () => {
+//     const list = new LL();
+//     list.insert('hello');
+//     list.kthFromEnd(0);
+//     expect(list.toString()).toEqual('{hello} -> NULL');
+//   });
+// });

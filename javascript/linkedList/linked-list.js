@@ -80,6 +80,28 @@ class LinkedList {
       currentNode = currentNode.next;
     }
   }
+
+  kthFromEnd(k){
+    let length = 0;
+    let currentNode = this.head;
+    while(currentNode !== null){
+      // console.log(currentNode);
+      currentNode = currentNode.next;
+      length ++;
+      if (currentNode.next === null){
+        return length;
+      }
+    }
+    let newLength = 0;
+    let selectedNodeLength = length - k;
+    while(currentNode){
+      currentNode = currentNode.next;
+      newLength++;
+      if(newLength === selectedNodeLength){
+        return currentNode.value;
+      }
+    }
+  }
 }
 
 module.exports = LinkedList;
