@@ -13,24 +13,21 @@ class LinkedList {
     if (this.head === null){
       const node = new Node(value);
       this.head = node;
-    //   nodeValues += 'node';
     } else {
       const node = new Node(value);
       node.next = this.head;
       this.head = node;
-    //   nodeValues =+ 'node';
     }
   }
 
-  //   append(value){
-  //     const node = new Node(value);
-  //     let currentNode = this.head;
-  //     while (currentNode.next !== null){
-  //       currentNode = currentNode.next;
-  //     }
-  //     currentNode.next = node;
-  //     nodeValues += `-> ${node}`;
-  //   }
+  append(value){
+    const node = new Node(value);
+    let currentNode = this.head;
+    while (currentNode.next !== null){
+      currentNode = currentNode.next;
+    }
+    currentNode.next = node;
+  }
 
   includes(value){
     let current = this.head;
@@ -41,20 +38,6 @@ class LinkedList {
     if(current.value === value) return true;
     else {return false;}
   }
-  //   includes(searchValue) {
-  //     let currentNode = this.head;
-  //     let result;
-  //     while(currentNode.value !== searchValue){
-  //       currentNode = currentNode.next;
-  //       if(currentNode === null){
-  //         return result = false;
-  //       }
-  //     }
-  //     if (currentNode.value === searchValue){
-  //       return result = true;
-  //     }
-  //     return result;
-  //   }
 
   toString(){
     let currentNode = this.head;
@@ -65,6 +48,37 @@ class LinkedList {
     }
     outputString.push('NULL');
     return outputString.join(' -> ');
+  }
+
+
+  insertBefore(searchValue, value){
+    let currentNode = this.head;
+    while(currentNode.next !== null){
+      if(currentNode.next.value === searchValue){
+        let temp = new Node();
+        temp.value = value;
+        temp.next = currentNode.next;
+        if(currentNode.next === this.next)this.next = temp;
+        currentNode.next = temp;
+        return;
+      }
+      currentNode = currentNode.next;
+    }
+  }
+
+  insertAfter(searchValue, value) {
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.value === searchValue) {
+        let temp = new Node();
+        temp.value = value;
+        temp.next = currentNode.next;
+        if (currentNode === this.next)this.next = temp;
+        currentNode.next = temp;
+        return;
+      }
+      currentNode = currentNode.next;
+    }
   }
 }
 
