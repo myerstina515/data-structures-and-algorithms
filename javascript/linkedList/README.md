@@ -8,8 +8,6 @@ Tina Meyers
 
 javascript, jest
 
-
-
 ## Approach/Efficiency:
 
 O(1) for the insert(value), O(n) for the remainder

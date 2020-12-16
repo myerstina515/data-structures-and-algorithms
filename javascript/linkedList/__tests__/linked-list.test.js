@@ -72,4 +72,61 @@ describe('return a string', () => {
     expect(list.toString()).toEqual('{uno} -> {dos} -> {tres} -> NULL');
   });
 });
+describe('append', () => {
+  it ('should add a value to the end of the linked list', () => {
+    const list = new LL();
+    list.insert('one');
+    list.insert('two');
+    list.insert('three');
+    list.append('four');
+    expect(list.toString()).toEqual('{three} -> {two} -> {one} -> {four} -> NULL');
+  });
+});
+describe('append multiple', () => {
+  it ('should add multiple values to the end of the linked list', () => {
+    const list = new LL();
+    list.insert('one');
+    list.insert('two');
+    list.append('three');
+    list.append('four');
+    expect(list.toString()).toEqual('{two} -> {one} -> {three} -> {four} -> NULL');
+  });
+});
+describe('insert before', () => {
+  it ('should add a node before the specified node', () => {
+    const list = new LL();
+    list.insert('one');
+    list.insert('two');
+    list.insertBefore('one', 'seven');
+    expect(list.toString()).toEqual('{two} -> {seven} -> {one} -> NULL');
+  });
+});
+describe('insert before first', () => {
+  it('should insert a node before the first node', () => {
+    const list = new LL();
+    list.insert('one');
+    list.insert('two');
+    list.insert('three');
+    list.insert('nine');
+    expect(list.toString()).toEqual('{nine} -> {three} -> {two} -> {one} -> NULL');
+  });
+});
+describe('insert after', () => {
+  it ('should add a node after the specified node', () => {
+    const list = new LL();
+    list.insert('one');
+    list.insert('two');
+    list.insertAfter('two', 'five');
+    expect(list.toString()).toEqual('{two} -> {five} -> {one} -> NULL');
+  });
+});
+describe('insert after end', () => {
+  it('should insert a node after the end of the last node', () => {
+    const list = new LL();
+    list.insert('one');
+    list.insert('two');
+    list.insertAfter('one', 'five');
+    expect(list.toString()).toEqual('{two} -> {one} -> {five} -> NULL');
+  });
+});
 
