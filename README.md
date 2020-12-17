@@ -14,6 +14,10 @@
 
 6. [Linked List Pt 2](javascript/linkedList/linked-list-js)
 
+7. Not listed (see above for link)
+
+8. [LLZip](javascript/llZip/ll-zip.js)
+
 ## Create a copy of this repository
 
 1. Create a new repository in your GitHub account called `data-structures-and-algorithms`
