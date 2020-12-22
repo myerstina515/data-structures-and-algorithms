@@ -18,6 +18,8 @@
 
 8. [LLZip](javascript/llZip/ll-zip.js)
 
+11. [queueWithStacks](javascript/queueWithStacks/queue-with-stacks.js)
+
 ## Create a copy of this repository
 
 1. Create a new repository in your GitHub account called `data-structures-and-algorithms`

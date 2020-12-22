@@ -87,6 +87,6 @@ describe('Queues', () => {
   });
   it('Calling dequeue or peek on empty queue raises exception', () => {
     const queue = new item.Queue();
-    expect(queue.isEmpty()).toBe(true);
+    expect(() => queue.peek()).toThrow('Exception');
   });
 });
