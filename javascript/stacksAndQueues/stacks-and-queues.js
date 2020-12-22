@@ -17,7 +17,7 @@ class Stack{
     this.top = node;
   }
   pop(){// does not take any argument, removes the node from the top of the stack, and returns the node’s value.
-    if (!this.top) return false;
+    if (!this.top) throw new Error(`Exception`);
     const tempNode = this.top;
     this.top = tempNode.next;
     return tempNode.value;
@@ -49,7 +49,7 @@ class Queue{
     }
   }
   dequeue(){//does not take any argument, removes the node from the front of the queue
-    if(!this.front) return false;
+    if(!this.front) throw new Error(`Exception`);
     const value = this.front;
     this.front = value.next;
     return value;
