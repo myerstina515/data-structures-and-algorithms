@@ -1,6 +1,6 @@
 # Code Challenge: Linked List Zip
 
- > Create a Pseudo Queue class with two Stack objects as nodes. Create enqueue and dequeue methods.
+> Create a Pseudo Queue class with two Stack objects as nodes. Create enqueue and dequeue methods.
 
 ## CC=Code Challenge/Pair Programming
 
