@@ -25,9 +25,8 @@ class BinaryTree{
   }
 
   inOrder(){
-    // starting with an empty array
+
     let array = [];
-    // recursive helper function to traverse through the tree
     let _walk = (node) => {
       if(node.left) {
         _walk(node.left);
@@ -41,9 +40,7 @@ class BinaryTree{
     return array;
   }
   postOrder(){
-    // starting with an empty array
     let array = [];
-    // recursive helper function to traverse through the tree
     const _walk = (node) => {
       if(node.left) {
         _walk(node.left);
@@ -56,20 +53,26 @@ class BinaryTree{
     _walk(this.root);
     return array;
   }
+  findMaximumValue(){
+    let maxValue = 0;
+    function _recursionPre(node) {
+      if(maxValue < node.value){
+        maxValue = node.value;
+      }
+      if(node.left) {
+        _recursionPre(node.left);
+      }
+      if(node.right){
+        _recursionPre(node.right);
+      }
+    }
+    _recursionPre(this.root);
+    return maxValue;
+  }
 }
-// findMaximumValue(){
-//   let arrayValues = inOrder(root);
-//   let max = 0;
-//   for ( let i = 0; i <= arrayValues.length; i ++){
-//     if (arrayValues[i] > max )
-//       max = arrayValues[i];
-//   }
-//   return max;
-// }
 
 class BinarySearchTree extends BinaryTree{
   add(value){
-    //if we are adding to a BST, the value has to be an int
     if(typeof value !=='number'){
       return null;
     }
@@ -107,47 +110,6 @@ class BinarySearchTree extends BinaryTree{
     _search(root, value);
   }
 }
-// class BinarySearchTree{
-//   constructor(root = null){
-//     this.root = new Node (root);
-//   }
-// add(value){
-//   let newNode = new Node(value);
-//   if (!this.root){
-//     this.root = newNode;
-//   } else {
-//     _helper(this.root, newNode);
-//   }
-//   function _helper(node, newNode){
-//   //   let currentNode = root;
-//     if (newNode.value < node.value){
-//       if ( !node.left ){
-//         node.leftChild = newNode;
-//       } else {
-//         _helper (node.left, newNode);
-//       }
-//     } else if (!node.right){
-//       node.rightChild = newNode;
-//     } else {
-//       _helper(node.right, newNode);
-//     }
-//   }
-// }
-
-// contains(root, value){
-//   function _search(root, value){
-//     if(!root){ return; }
-//     else if (root.value === value || root.left.contains(value) || root.right.contains(value)){
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-//   _search(root, value);
-// }
-// }
-
-
 
 
 module.exports = {Node, BinaryTree, BinarySearchTree};
