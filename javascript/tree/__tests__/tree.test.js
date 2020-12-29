@@ -53,4 +53,16 @@ describe('Binary Trees', () => {
     tree.add(9);
     expect(tree.postOrder()).toEqual([3, 2, 1, 9, 8, 7, 5]);
   });
+  it('Finds the highest node value and returns it', () => {
+    let node = new Node(6);
+    let tree = new BinarySearchTree(node);
+    tree.add(13);
+    tree.add(2);
+    tree.add(74);
+    tree.add(1);
+    tree.add(56);
+    tree.add(404);
+    console.log('this is my tree', tree.findMaximumValue());
+    expect(tree.findMaximumValue()).toEqual(404);
+  });
 });
