@@ -19,3 +19,18 @@
 > add: Adds new nodes to the tree in the correct place.
 > contains: checks to see if the node exits in the tree yet.
 
+## Challenge Summary
+
+> Day 2: Binary Trees: find Maximum value in binary tree
+
+## Challenge Description
+
+> using a method called findMaximumValue to find the highest value in a binary tree, without using language specific built in methods.
+
+## Approach & Efficiency: Day 2
+
+> We used the previously created binary tree class as well as the node class, and used it to aid in traversing through the tree to return the largest value.
+
+## Solution
+
+[day2](../assets/treeOne.png)
