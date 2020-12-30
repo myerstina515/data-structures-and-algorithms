@@ -18,7 +18,10 @@
 
 8. [LLZip](javascript/llZip/ll-zip.js)
 
+11. [queueWithStacks](javascript/queueWithStacks/queue-with-stacks.js)
+
 15.-18. [BinaryTree](javascript/tree/tree.js)
+
 
 ## Create a copy of this repository
 
