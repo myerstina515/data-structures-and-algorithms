@@ -18,6 +18,8 @@
 
 8. [LLZip](javascript/llZip/ll-zip.js)
 
+15.-18. [BinaryTree](javascript/tree/tree.js)
+
 ## Create a copy of this repository
 
 1. Create a new repository in your GitHub account called `data-structures-and-algorithms`
