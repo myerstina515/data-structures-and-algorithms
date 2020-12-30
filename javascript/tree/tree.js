@@ -69,6 +69,27 @@ class BinaryTree{
     _recursionPre(this.root);
     return maxValue;
   }
+  breadthFirst(){
+    let array = [];
+    let currentNode = this.root;
+    array.push(currentNode.value);
+    function _helper (node){
+      currentNode = node;
+      if (currentNode.left) array.push(currentNode.left.value);
+      if (currentNode.right) array.push(currentNode.right.value);
+      let nextNode = currentNode.left;
+      if (nextNode !== null){
+        _helper(nextNode);
+      }
+      let rightNode = currentNode.right;
+      if(rightNode !== null){
+        _helper(rightNode);
+      }
+      return;
+    }
+    _helper(currentNode);
+    return array;
+  }
 }
 
 class BinarySearchTree extends BinaryTree{
