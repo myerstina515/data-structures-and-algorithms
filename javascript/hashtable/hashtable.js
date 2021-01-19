@@ -57,14 +57,23 @@ class HashMap{
   }
 
   // need something that will take in a key and retrieve the value from the table.
-  get(key){
-    // I need to find my hash value to be able to compare it to keys in the table
+  get(key) {
+    // first, I need to hash the key
     const hash = this.hash(key);
-    // Take the hash and see if it exists in the table
-    // if it doesn't exist, return null
-    if(!this.map[hash]) return null;
-    // if it does exist, we need to point to the hash and return the value
-    return this.map[hash];
+    // if there isn't a hash return null
+    if (!this.map[hash]) return null;
+    // make my hashed position (which is a linked list) equal to current
+    let current = this.map[hash].head;
+    // while current exists
+    while (current) {
+      if (current.value.hasOwnProperty(key)) {
+        return current.value[key];
+      }
+      current = current.next;
+    }
+    return null;
+    // look to see if the keys match
+    // if they do, return the value
   }
 
   // check to see if the table contains the key. Return t/f
