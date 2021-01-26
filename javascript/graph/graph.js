@@ -33,49 +33,47 @@ class Graph {
 
   getNeighbors(vertex){
     if(!this.adjacencyList.has(vertex)){
-      return null;
+      throw new Error('error in getting neighbors', vertex);
     }
     return this.adjacencyList.get(vertex); //returns an array
   }
-  bfs(startNode) {
+
+  bft(startNode) {
+    if(!startNode) return null;
     const queue = [];
-    // a set is an object that will only store unique keys.
     const visitedNodes = new Set();
     queue.push(startNode);
     visitedNodes.add(startNode);
     while (queue.length) {
-      const currentNode = queue.shift();
-      //all the neighbors of the node that I took off of the queue
+      let currentNode = queue.shift();
       const neighbors = this.getNeighbors(currentNode);
-      // loop over all of the neighbors
-      for (let neighbor of neighbors) {
-        const neighborNode = neighbor.vertex;
+      for (let i = 0; i < neighbors.length; i++) {
+        const neighborNode = neighbors.vertex;
         if (visitedNodes.has(neighborNode)) { continue;
-        }
-        else {
+        } else {
           visitedNodes.add(neighborNode);
         }
+        queue.push(neighborNode);
       }
     }
     return visitedNodes;
-
   }
 
-  dfs(startNode) {
-    const visitedNodes = new Set();
-    const _traverseNeighbors = (node) => {
-      visitedNodes.add(node);
-      const neighbors = this.getNeighbors(node);
-      for (let edge of neighbors) {
-        // if the set doesn’t have the node
-        if (!visitedNodes.has(edge.vertex)) {
-          _traverseNeighbors(edge.vertex);
-        }
-      }
-    };
-    _traverseNeighbors(startNode);
-    return visitedNodes;
-  }
+  // dfs(startNode) {
+  //   const visitedNodes = new Set();
+  //   const _traverseNeighbors = (node) => {
+  //     visitedNodes.add(node);
+  //     const neighbors = this.getNeighbors(node);
+  //     for (let edge of neighbors) {
+  //       // if the set doesn’t have the node
+  //       if (!visitedNodes.has(edge.vertex)) {
+  //         _traverseNeighbors(edge.vertex);
+  //       }
+  //     }
+  //   };
+  //   _traverseNeighbors(startNode);
+  //   return visitedNodes;
+  // }
 
   pathTo(startNode, endNode) {
     const stack = [];

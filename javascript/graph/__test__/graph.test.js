@@ -39,13 +39,13 @@ describe('Graph testing', () => {
     graph.addDirectedEdge(3,4,1);
     expect(graph.getNeighbors(3)).toEqual([ {vertex: 1, weight: 4} ]);
   });
-  it('The proper size is returned, representing the number of nodes in the graph', () => {
-    let graph = new obj.Graph();
-    graph.addVertex(1);
-    graph.addVertex(2);
-    graph.addVertex(3);
-    graph.addDirectedEdge(1, 2, 4);
-    graph.addDirectedEdge(2, 3, 5);
-    console.log(graph.size(1));
-  })
+  // it('The proper size is returned, representing the number of nodes in the graph', () => {
+  //   let graph = new obj.Graph();
+  //   graph.addVertex(1);
+  //   graph.addVertex(2);
+  //   graph.addVertex(3);
+  //   graph.addDirectedEdge(1, 2, 4);
+  //   graph.addDirectedEdge(2, 3, 5);
+  //   console.log(graph.size(1));
+  // });
 });
