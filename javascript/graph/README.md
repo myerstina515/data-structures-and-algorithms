@@ -21,6 +21,8 @@ Include the weight of the connection in the returned collection
 Returns the total number of nodes in the graph
 6. BFT()
 Accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+7. getEdges()
+Accepts a graph and an array, returns the combined value of all edges
 
 ## Challenge
 
@@ -39,7 +41,9 @@ As noted above,
 > GetNeighbors(): Returns a collection of edges connected to the given node, Takes in a given node, Include the weight of the connection in the returned collection
 > Size(): Returns the total number of nodes in the graph
 > BFT(): accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+> getEdges(): Accepts a graph and an array, returns the combined value of all edges
 
 ## Whiteboards
 
 [UML]('../assets/BFT.png');
+[UML]('../assets/CC-37.png)

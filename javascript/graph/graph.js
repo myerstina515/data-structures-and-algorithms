@@ -135,7 +135,7 @@ class Graph {
     _traverseNeighbors(startNode);
     return visitedNodes;
   }
-  gitEdge(array) {
+  getEdge(array) {
     if (!array[0] || !array[1]) {
       return false, 0;
     }
