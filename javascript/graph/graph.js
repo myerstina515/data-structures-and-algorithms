@@ -22,7 +22,7 @@ class Graph {
 
   addDirectedEdge(startVertex, endVertex, weight) {
     // error checking: we MUST have a starting and ending node
-    if (!this.adjacencyList.has(startVertex) || !this.adjacencyList.has(endVertex)){
+    if (!this.adjacencyList.has(startVertex) || !this.adjacencyList.has(endVertex)) {
       throw new Error('error: need a starting and ending vertex');
     }
     // get startVertex from the Map (all of vertices)
@@ -31,15 +31,15 @@ class Graph {
     adjacencies.push(new Edge(endVertex, weight));
   }
 
-  getNeighbors(vertex){
-    if(!this.adjacencyList.has(vertex)){
+  getNeighbors(vertex) {
+    if (!this.adjacencyList.has(vertex)) {
       throw new Error('error in getting neighbors', vertex);
     }
     return this.adjacencyList.get(vertex); //returns an array
   }
 
   bft(startNode) {
-    if(!startNode) return null;
+    if (!startNode) return null;
     const queue = [];
     const visitedNodes = new Set();
     queue.push(startNode);
@@ -47,9 +47,10 @@ class Graph {
     while (queue.length) {
       let currentNode = queue.shift();
       const neighbors = this.getNeighbors(currentNode);
-      for (let i = 0; i < neighbors.length; i++) {
-        const neighborNode = neighbors.vertex;
-        if (visitedNodes.has(neighborNode)) { continue;
+      for (let neighbor of neighbors) {
+        const neighborNode = neighbor.vertex;
+        if (visitedNodes.has(neighborNode)) {
+          continue;
         } else {
           visitedNodes.add(neighborNode);
         }
@@ -103,16 +104,16 @@ class Graph {
     }
     return parentPath;
   }
-  size(startNode){
+  size(startNode) {
     let count = 0;
-    if(!startNode) return count;
+    if (!startNode) return count;
     const visitedNodes = new Set();
     const _traverseNeighbors = (node) => {
       visitedNodes.add(node);
-      count ++;
+      count++;
       const neighbors = this.getNeighbors(node);
-      for(let edge of neighbors){
-        if(!visitedNodes.has(edge.vertex)){
+      for (let edge of neighbors) {
+        if (!visitedNodes.has(edge.vertex)) {
           _traverseNeighbors(edge.vertex);
         }
       }
@@ -120,13 +121,13 @@ class Graph {
     _traverseNeighbors(startNode);
     return count;
   }
-  getNodes(startNode){
+  getNodes(startNode) {
     const visitedNodes = new Set();
     const _traverseNeighbors = (node) => {
       visitedNodes.add(node);
       const neighbor = this.getNeighbors(node);
-      for(let edge of neighbor){
-        if(!visitedNodes.has(edge.vertex)){
+      for (let edge of neighbor) {
+        if (!visitedNodes.has(edge.vertex)) {
           _traverseNeighbors(edge.vertex);
         }
       }
@@ -134,6 +135,30 @@ class Graph {
     _traverseNeighbors(startNode);
     return visitedNodes;
   }
+  gitEdge(array) {
+    if (!array[0] || !array[1]) {
+      return false, 0;
+    }
+    let output = false;
+    let outputValue = 0;
+    for (let i = 0; i <= array.length - 1; i++) {
+      let neighbor = this.getNeighbors(array[i]);
+      for (let j = 0; j <= neighbor.length - 1; j++) {
+        if (array[i + 1] === neighbor[j].vertex) {
+          outputValue += neighbor[j].weight;
+          output = true;
+        }
+      }
+      if (output === false) {
+        output = false;
+        outputValue = 0;
+        return [output, outputValue];
+      }
+    }
+    return [output, outputValue];
+  }
 }
 
-module.exports = {Vertex, Edge, Graph};
+
+
+module.exports = { Vertex, Edge, Graph };
