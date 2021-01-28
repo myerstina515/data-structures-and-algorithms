@@ -60,21 +60,21 @@ class Graph {
     return visitedNodes;
   }
 
-  // dfs(startNode) {
-  //   const visitedNodes = new Set();
-  //   const _traverseNeighbors = (node) => {
-  //     visitedNodes.add(node);
-  //     const neighbors = this.getNeighbors(node);
-  //     for (let edge of neighbors) {
-  //       // if the set doesn’t have the node
-  //       if (!visitedNodes.has(edge.vertex)) {
-  //         _traverseNeighbors(edge.vertex);
-  //       }
-  //     }
-  //   };
-  //   _traverseNeighbors(startNode);
-  //   return visitedNodes;
-  // }
+  dfs(startNode) {
+    const visitedNodes = new Set();
+    const _traverseNeighbors = (node) => {
+      visitedNodes.add(node);
+      const neighbors = this.getNeighbors(node);
+      for (let edge of neighbors) {
+        // if the set doesn’t have the node
+        if (!visitedNodes.has(edge.vertex)) {
+          _traverseNeighbors(edge.vertex);
+        }
+      }
+    };
+    _traverseNeighbors(startNode);
+    return visitedNodes;
+  }
 
   pathTo(startNode, endNode) {
     const stack = [];
