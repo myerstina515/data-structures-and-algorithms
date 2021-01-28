@@ -23,6 +23,7 @@ Returns the total number of nodes in the graph
 Accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
 7. getEdges()
 Accepts a graph and an array, returns the combined value of all edges
+8. DFS() Accepts an adjacency list as a graph, and traverses through the graph, and returns the visited nodes as a set
 
 ## Challenge
 
@@ -42,8 +43,10 @@ As noted above,
 > Size(): Returns the total number of nodes in the graph
 > BFT(): accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
 > getEdges(): Accepts a graph and an array, returns the combined value of all edges
+> DFS() Accepts an adjacency list as a graph, and traverses through the graph, and returns the visited nodes as a set
 
 ## Whiteboards
 
 [UML]('../assets/BFT.png');
 [UML]('../assets/CC-37.png)
+[UML]('../assets/CC-38.png')
